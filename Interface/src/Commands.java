@@ -6,7 +6,7 @@ public class Commands {
 
     Commands(){
         commands = new ArrayList<>();
-        this.commands.add(new Data());
+        this.commands.add(new Date());
         this.commands.add(new Dir());
         this.commands.add(new Exit());
         this.commands.add(new Time());

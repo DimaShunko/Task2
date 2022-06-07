@@ -1,17 +1,16 @@
-public class Help implements Command{
+import java.time.LocalDate;
 
+public class Date implements Command{
 
     @Override
     public String getName() {
-        return "help";
+        return "date";
     }
 
     @Override
     public void exec() {
-        for (Command com: Main.commands.commands){
-            System.out.println(com.help());
-        }
-
+        LocalDate date =  LocalDate.now();
+        System.out.println(date);
     }
 
     @Override

@@ -3,17 +3,23 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    static Commands commands;
+
+    Main(){
+        commands = new Commands();
+    }
+    
     public static void main(String[] args) {
         boolean b;
 
         Scanner scanner = new Scanner(System.in);
-        Commands commands = new Commands();
+        Main main = new Main();
         System.out.println("Введите команду");
 
         while (true){
             String name = scanner.nextLine();
             b = false;
-            for(Command command: commands.commands){
+            for(Command command: main.commands.commands){
                 if(command.getName().contentEquals(name)){
                     command.exec();
                     b = true;
