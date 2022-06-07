@@ -8,7 +8,7 @@ public class Help implements Command{
 
     @Override
     public void exec() {
-        for (Command com: Main.commands.commands){
+        for (Command com: Main.getCommands()){
             System.out.println(com.help());
         }
 

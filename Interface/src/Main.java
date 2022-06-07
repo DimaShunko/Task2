@@ -3,12 +3,21 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    static Commands commands;
+    private static List<Command> commands;
 
     Main(){
-        commands = new Commands();
+        commands = new ArrayList<>();
+        this.commands.add(new Date());
+        this.commands.add(new Dir());
+        this.commands.add(new Exit());
+        this.commands.add(new Time());
+        this.commands.add(new Help());
     }
-    
+
+    public static List<Command> getCommands() {
+        return commands;
+    }
+
     public static void main(String[] args) {
         boolean b;
 
@@ -19,7 +28,7 @@ public class Main {
         while (true){
             String name = scanner.nextLine();
             b = false;
-            for(Command command: main.commands.commands){
+            for(Command command: main.getCommands()){
                 if(command.getName().contentEquals(name)){
                     command.exec();
                     b = true;
