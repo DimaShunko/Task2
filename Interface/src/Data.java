@@ -11,4 +11,9 @@ public class Data implements Command{
         LocalDate date =  LocalDate.now();
         System.out.println(date);
     }
+
+    @Override
+    public String help() {
+        return "help - помощь";
+    }
 }

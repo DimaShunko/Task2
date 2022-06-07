@@ -11,4 +11,9 @@ public class Time implements Command{
         LocalTime time = LocalTime.now();
         System.out.println(time);
     }
+
+    @Override
+    public String help() {
+        return "time - Московское время";
+    }
 }

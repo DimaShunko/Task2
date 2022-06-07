@@ -7,19 +7,13 @@ public class Main {
         boolean b;
 
         Scanner scanner = new Scanner(System.in);
-        List<Command> commands = new ArrayList<>();
-        commands.add(new Data());
-        commands.add(new Dir());
-        commands.add(new Exit());
-        commands.add(new Help());
-        commands.add(new Time());
+        Commands commands = new Commands();
         System.out.println("Введите команду");
-        new Help().exec();
 
         while (true){
             String name = scanner.nextLine();
             b = false;
-            for(Command command: commands){
+            for(Command command: commands.commands){
                 if(command.getName().contentEquals(name)){
                     command.exec();
                     b = true;

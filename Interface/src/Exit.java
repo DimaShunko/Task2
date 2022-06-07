@@ -9,4 +9,9 @@ public class Exit implements Command{
         System.out.println("Выход");
         System.exit(0);
     }
+
+    @Override
+    public String help() {
+        return "exit - выход";
+    }
 }

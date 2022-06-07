@@ -8,4 +8,9 @@ public class Dir implements Command{
     public void exec() {
         System.out.println("Директоия: "+ System.getProperty("user.dir"));
     }
+
+    @Override
+    public String help() {
+        return "dir - дериктория";
+    }
 }

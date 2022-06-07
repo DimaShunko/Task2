@@ -1,4 +1,5 @@
 public class Help implements Command{
+
     @Override
     public String getName() {
         return "help";
@@ -6,10 +7,15 @@ public class Help implements Command{
 
     @Override
     public void exec() {
-        System.out.println("help - помощь");
-        System.out.println("time - Московское время");
-        System.out.println("date - дата");
-        System.out.println("dir - дериктория");
-        System.out.println("exit - выход");
+        Commands commands = new Commands();
+        for (Command command: commands.commands){
+            System.out.println(command.help());
+        }
+
+    }
+
+    @Override
+    public String help() {
+        return "help - помощь";
     }
 }
